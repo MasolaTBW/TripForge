@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "tripforge-backend"
+version = "0.1.0"
+description = "Taxi-association courier backend for TripForge"
+authors = ["TripForge Team <team@tripforge.local>"]
+readme = "../README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.0"
+uvicorn = "^0.30.6"
+pydantic = "^2.9.2"
+sqlalchemy = "^2.0.54"
+python-dotenv = "^1.2.3"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+httpx = "^0.27.2"
+pytest-asyncio = "^1.4.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
